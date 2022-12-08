@@ -1,8 +1,8 @@
 def read_time(text)
-  if text == "" 
+  if text == ""
     return 0
-  elsif 
-    time = (text.split.length / 200).round
-  return time
-end
+  else
+    time = (text.split.length.to_f / 200).round
+      return time
+  end
 end
