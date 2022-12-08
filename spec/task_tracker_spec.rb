@@ -10,4 +10,8 @@ RSpec.describe "task_tracker method" do
     expect(result).to eq false
   end
 
+  it "returns error message for empty string" do
+    expect { task_tracker("") }.to raise_error "You have not input anything."
+  end
+
 end
