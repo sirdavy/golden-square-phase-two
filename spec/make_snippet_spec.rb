@@ -11,5 +11,3 @@ RSpec.describe "make snippet method" do
     expect(result).to eq "This is how you test..."
   end
 end
-
-# .split(' ')
