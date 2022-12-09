@@ -1,0 +1,56 @@
+
+# Exercise 1
+
+def say_hello(name)
+  return "hello #(name)"
+end
+
+# Intended output:
+#
+# > say_hello("kay")
+# => "hello kay"
+
+def say_hello(name)
+  return "hello #{name}"
+end
+
+# Exercise 2
+
+# # encode is method, sent plaintext and key
+#  takes the key, makes all unique characters
+#  makes an array of the alphabet and removes the uniq character from key
+# this is cipher
+
+# the plain text is mapped, each letter index has 65 added to
+
+
+def encode(plaintext, key)
+  cipher = key.chars.uniq + (('a'...'z').to_a - key.chars)
+  ciphertext_chars = plaintext.chars.map do |char|
+    (65 + cipher.find_index(char).to_i).chr  #added .to_i
+  end
+  return ciphertext_chars.join
+end
+
+def decode(ciphertext, key)
+  cipher = key.chars.uniq + (('a'...'z').to_a - key.chars)
+  plaintext_chars = ciphertext.chars.map do |char|
+    cipher[65 - char.ord]
+  end
+  return plaintext_chars.join
+end
+
+# Could not figure out the bug in decode
+
+
+
+
+
+
+
+
+
+
+
+
+
