@@ -1,14 +1,13 @@
 class Todo
-
   def initialize
     @array = []
   end
 
-  def add(text) 
+  def add(text)
     if @array.include?(text)
       fail "Todo already added."
     else
-    @array << text
+      @array << text
     end
   end
 
@@ -16,7 +15,7 @@ class Todo
     if @array.empty?
       fail "List is empty"
     else
-    return @array
+      return @array
     end
   end
 
@@ -25,8 +24,7 @@ class Todo
       fail "Todo not present."
     else
       @array.delete(text)
-    return @array
+      return @array
     end
   end
-
 end

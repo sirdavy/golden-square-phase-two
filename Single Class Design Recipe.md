@@ -37,29 +37,20 @@ end
 
 ## 3. Create Examples as Tests
 
-tasks_for_week = Todo.new
+task_for_week = Todo.new
 task_for_week.add("Milk the cows.")
 task_for_week.view => ["Milk the cows."]
 
-tasks_for_week = Todo.new
-task_for_week.add("Wash the car.")
-task_for_week.add("Sell the cow.")
-task_for_week.view => ["Wash the car.", "Sell the cow."]
-
-tasks_for_week = Todo.new
-task_for_week.add("Wash the car.")
-task_for_week.add("Sell the cow.")
-task_for_week.add("Play football")
-task_for_week.remove("Play football")
-task_for_week.view => ["Wash the car.", "Sell the cow."]
-
-tasks_for_week = Todo.new
+task_for_week = Todo.new
 task_for_week.add("Wash the car.")
 task_for_week.add("Wash the car.") => "Todo already added."
 
-tasks_for_week = Todo.new
+task_for_week = Todo.new
 task_for_week.add("Wash the car.")
 task_for_week.remove("Play football") => "Todo not present."
+
+task_for_week = Todo.new
+task_for_week.view => "List is empty"
 
 
 ## 4. Implement the Behaviour
