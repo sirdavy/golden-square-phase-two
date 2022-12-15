@@ -4,7 +4,7 @@ class LetterCounter
   end
 
   def calculate_most_common()
-    counter = Hash.new(0)
+    counter = Hash.new(0) #changed Hash.new(1) to Hash.new(0) as it was setting the starting count 1 too high
     most_common = nil
     most_common_count = 1
     @text.chars.each do |char|
@@ -12,7 +12,7 @@ class LetterCounter
       counter[char] = (counter[char] || 1) + 1
       if counter[char] > most_common_count
         most_common = char
-        most_common_count = counter[char]
+        most_common_count = counter[char] #changed += counter[char] to = counter[char] as it need to equal char count not be char count plus 1. 
         #binding.irb
       end
     end
