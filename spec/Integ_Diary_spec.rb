@@ -54,8 +54,6 @@ RSpec.describe "integration test" do
       david_diary.add(entry_5)
       result = david_diary.find_best_entry_for_reading_time(120, 3)
       expect(result).to eq entry_2
-      #(or is it [entry_2])
-      #(wpm, minutes)ie 360 words, entry_3(400) is too much.
     end
   end
 
