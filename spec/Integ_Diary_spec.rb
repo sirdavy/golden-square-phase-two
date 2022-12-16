@@ -43,11 +43,15 @@ RSpec.describe "integration test" do
     it "returns the entry closest to but not over the estimated time" do
       david_diary = Diary.new
       entry_1 = DiaryEntry.new("Monday", "Manic " * 200)
-      entry_2 = DiaryEntry.new("Tuesday", "Ruby " * 300)
+      entry_2 = DiaryEntry.new("Friday", "Night " * 359)
       entry_3 = DiaryEntry.new("Wednesday", "Week " * 400)
+      entry_4 = DiaryEntry.new("Thursday", "Child " * 350)
+      entry_5 = DiaryEntry.new("Tuesday", "Ruby " * 300)
       david_diary.add(entry_1)
       david_diary.add(entry_2)
       david_diary.add(entry_3)
+      david_diary.add(entry_4)
+      david_diary.add(entry_5)
       result = david_diary.find_best_entry_for_reading_time(120, 3)
       expect(result).to eq entry_2
       #(or is it [entry_2])
