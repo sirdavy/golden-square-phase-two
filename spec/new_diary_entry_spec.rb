@@ -13,14 +13,19 @@ RSpec.describe DiaryEntry do
     end
   
     it "it counts the words" do
-    entry_1 = DiaryEntry.new("Monday", "")
-    expect(entry_1.count_words).to eq 0
+    entry_1 = DiaryEntry.new("Monday", "Manic " * 200)
+    expect(entry_1.count_words).to eq 200
     end
 
     it "it returns zero if contents is empty the words" do
-      entry_1 = DiaryEntry.new("Monday", "Manic " * 200)
-      expect(entry_1.count_words).to eq 200
+      entry_1 = DiaryEntry.new("Monday", "")
+      expect(entry_1.count_words).to eq 0
       end
+
+      it "it returns reading time for entry" do
+        entry_1 = DiaryEntry.new("Monday", "Manic " * 200)
+        expect(entry_1.reading_time(110)).to eq 2
+        end
   
   end
 end
